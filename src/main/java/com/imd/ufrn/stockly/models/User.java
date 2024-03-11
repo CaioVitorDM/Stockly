@@ -2,6 +2,7 @@ package com.imd.ufrn.stockly.models;
 
 import com.imd.ufrn.stockly.models.enums.Role;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,6 +43,7 @@ public class User extends BaseEntity{
 
     @Column(name = "role", nullable = false)
     @Enumerated(EnumType.STRING)
+    @NotNull(message = "O campo perfil não pode ser nulo")
     @Getter
     @Setter
     private Role role;
